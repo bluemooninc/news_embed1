@@ -60,33 +60,13 @@ class sFiles
 		}
 	}
 
-	function createUploadName($folder, $filename, $trimname = FALSE)
+	function createUploadName($folder='', $filename, $trimname = FALSE)
 	{
 		global $xoopsUser;
-
-		$workingfolder = $folder;
-		$uid = "";
-		if (xoops_substr($workingfolder, strlen($workingfolder) - 1, 1) <> '/') {
-			$workingfolder .= '/';
-		}
 		$ext = basename($filename);
 		$ext = explode('.', $ext);
 		$ext = '.' . $ext[count($ext) - 1];
-		$true = TRUE;
-		while ($true) {
-			$ipbits = explode(".", $_SERVER["REMOTE_ADDR"]);
-			list($usec, $sec) = explode(" ", microtime());
-
-			$usec = (integer)($usec * 65536);
-			$sec = ((integer)$sec) & 0xFFFF;
-
-			if ($trimname) {
-				$uid = $xoopsUser->uid() . "-" . time();
-			}
-			if (!file_exists($workingfolder . $uid . $ext)) {
-				$true = FALSE;
-			}
-		}
+		$uid = $xoopsUser->uid() . "-" . time();
 		return $uid . $ext;
 	}
 

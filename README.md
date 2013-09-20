@@ -1,19 +1,24 @@
-/******************************************************************************
-Program name  : news embed
+# News embed
+
+Module for XoopsX and XOOPS Cube2.2
+
 Based by      : news v1.44 (c) The XOOPS Project Module Dev Team
 Embed hack by : Yoshi SAKAI ( www.bluemooninc.jp )
- *****************************************************************************
+
+## Licence
+
   This program is free software; you can redistribute it and/or modify it under
   the terms of the GNU General Public License as published by the Free Software
   Foundation; either version 2 of the License, or (at your option) any later
   version.
-******************************************************************************/
-Description :
+
+## Description :
 
 1. Auto embedding for images, media and zip files. (You can add MIME-type at fileup.ini.php)
 2. Auto resize for thumbnail image.
 3. Full compatible as original news v1.44
 
+## Version up infos
 
 v1.44 2006/07/29 At submit.php, Change XOOPS_UPLOAD_PATH to UPLOADS(in fileup.ini.php)
 v1.44 2006/09/28 At archive.php,news_archive.html. Modify row colmn layout. Add a show whole year mode.
