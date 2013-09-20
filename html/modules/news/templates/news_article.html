@@ -1,0 +1,53 @@
+<div id="news-wrapper">
+	<h1><!--<span id="news-art-date"><{$story.posttime}></span> - --><{$story.title}></h1>
+	<div class="news-nav">
+		<div id="news-switch">
+			<a href="index.php" target="_top"><{$smarty.const._NW_NEWARRIVAL}></a> | <a href="archive.php" target="_top"><{$smarty.const._NW_ARCHIVE}></a>
+		</div>
+	</div>
+	<{if $xoops_isuser}>
+	<div class="news-usrnav">
+		<{$story.adminlink|replace:"[":""|replace:"]":""}>| <a href="submit.php"><{$smarty.const._NW_SUBMITNEWS}></a> | <a href="admin/"><{$smarty.const._NW_GOTOMODULEADMIN}></a>
+	</div>
+	<{/if}>
+	<div id="news-art-body"><{$story.text}></div>
+	<{if $story.poster != ''}>
+		<div class="itemInfo">
+		<{if $story.files_attached}><{$story.attached_link}>&nbsp;<{/if}>
+		<span class="itemPoster"><{$lang_postedby}> <{$story.poster}></span>
+		<span class="itemPostDate"><{$lang_on}> <{$story.posttime}></span> (<span class="itemStats"><{$story.hits}> <{$lang_reads}></span>) 
+		<{$news_by_the_same_author_link}>
+		</div>
+	<{/if}>
+	<{if $xoops_isuser}>
+	<div class="news-usrnav">
+		<{$story.adminlink|replace:"[":""|replace:"]":""}>| <a href="submit.php"><{$smarty.const._NW_SUBMITNEWS}></a> | <a href="admin/"><{$smarty.const._NW_GOTOMODULEADMIN}></a>
+	</div>
+	<{/if}>
+	<div class="news-nav">
+		<{if $nav_links}>
+		<{if $previous_story_id != -1}>
+		<a id="news-nav-pre" href='article.php?storyid=<{$previous_story_id}>' title="<{$previous_story_title}>" target="_top"><{$lang_previous_story}></a>
+		<{/if}>
+		<{if $next_story_id!= -1}>
+		<a id="news-nav-next" href='article.php?storyid=<{$next_story_id}>' title="<{$next_story_title}>"><{$lang_next_story}></a>
+		<{/if}>
+		<{/if}>
+	</div>
+</div>
+<!-- comment section -->
+<div style="text-align: center; padding: 3px; margin:3px;">
+	<{$commentsnav}>
+	<{$lang_notice}>
+</div>
+<div style="margin:3px; padding: 3px;">
+<{if $comment_mode == "flat"}>
+	<{include file="db:system_comments_flat.html"}>
+<{elseif $comment_mode == "thread"}>
+	<{include file="db:system_comments_thread.html"}>
+<{elseif $comment_mode == "nest"}>
+	<{include file="db:system_comments_nest.html"}>
+<{/if}>
+<!-- comment section -->
+<{include file='db:system_notification_select.html'}>
+</div>

@@ -1,11 +1,11 @@
 /******************************************************************************
 Program name  : news embed
 Based by      : news v1.44 (c) The XOOPS Project Module Dev Team
-Embed hack by : Yoshi SAKAI ( www.bluemooninc.jp )
+Embed hack by : Yoshi SAKAI ( www.bluemooninc.biz )
  *****************************************************************************
   This program is free software; you can redistribute it and/or modify it under
   the terms of the GNU General Public License as published by the Free Software
-  Foundation; either version 2 of the License, or (at your option) any later
+  Foundation; either version 2 of the License, or (at your option) any later 
   version.
 ******************************************************************************/
 Description :
@@ -25,7 +25,7 @@ v1.44 2007/01/20 Add topic title to the left of story title at news_block_top.ht
 v1.45 2008/04/25 Security Update for XSS Vulnerability at download.php.
 v1.46 2009/01/13 Style designed by Makinosuke. icon_32x32.png, icon_24x24.png Design by TYPEFACE. MarkItUp jQuery plugin was supported.
 v1.47 2009/02/21 Added topic title in include/serch.inc.php.
-v1.48 2009/04/28
+v1.48 2009/04/28 
       1.For Xoops CUBE of preference
       2.For Download as Japanese name
       3.For Xoops CUBE of the crumble of the screen is corrected about the management screen.
@@ -34,6 +34,3 @@ v1.49 2009/05/01 Fixed: event notify and poster name on template.
 v1.50 2009/06/04 New: Event notify as displayed topic with home text.
 v1.50a 2009/07/29 Added 2 messages in English file. clean up for notice message.
 v1.50b 2009/09/03 Fixed a div tag closing news_article template.
-v1.51 2013/08/01 Support PHP5.2 and MySQL5.1, on XOOPS Cube 2.2
-v1.52 2013/09/20 Add message for auto approval.
-v1.53 2013/09/20 eregi() change to preg_match() for PHP5.3
